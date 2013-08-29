@@ -1,0 +1,14 @@
+{
+    "name": "jr/magento-clever-cms",
+    "type": "magento-module",
+    "description": "Magento extension to manage cms pages as a tree structure with permissions.",
+    "authors": [
+        {
+            "name": "Johann Reinke",
+            "email": ""
+        }
+    ],
+    "require": {
+
+    }
+}
