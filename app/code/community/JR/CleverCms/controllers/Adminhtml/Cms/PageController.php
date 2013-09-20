@@ -216,7 +216,11 @@ class JR_CleverCms_Adminhtml_Cms_PageController extends Mage_Adminhtml_Cms_PageC
             $data['store_id'] = $this->getRequest()->getParam('store');
 
             if (!isset($data['stores'])) {
-                $data['stores'] = array();
+                $data['stores'] =
+                    array(
+                        Mage::app()->getStore()->getId(),  //admin store ('0')
+                        Mage::app()->getDefaultStoreView()->getId() //default frontend store ('1')
+                    );
             }
 
             $model->addData($data);
