@@ -51,6 +51,15 @@ class JR_CleverCms_Model_Adminhtml_Cms_Page_Observer
             'disabled' => $includeInMenuDisabled,
         ));
 
+        $form->getElement('base_fieldset')->addField('banner_block_id', 'select', array(
+            'name'     => 'banner_block_id',
+            'label'    => Mage::helper('cms')->__('Page Banner Block'),
+            'title'    => Mage::helper('cms')->__('Page Banner Block'),
+            'note'     => Mage::helper('cms')->__('Set CMS block to use as a page banner'),
+            'values'    => Mage::getModel('catalog/category_attribute_source_page')->getAllOptions(),
+            'required' => false
+        ));
+
         $form->getElement('base_fieldset')
             ->removeField('identifier')
             ->removeField('store_id');
